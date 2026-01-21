@@ -1,123 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TONFROG (TFROG) – Official Token</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
-    <meta name="description" content="TONFROG (TFROG) is a community-driven meme token on The Open Network (TON)." />
-    <meta name="keywords" content="TONFROG, TFROG, TON token, Jetton, meme coin, TON blockchain" />
+  <title>TONFROG (TFROG) – Meme Token on TON</title>
 
-    <!-- Favicon / Logo -->
-    <link rel="icon" type="image/png" href="./logo1.png" />
+  <!-- SEO -->
+  <meta name="description" content="TONFROG (TFROG) is a community-driven meme token built on The Open Network (TON)." />
+  <meta name="keywords" content="TONFROG, TFROG, TON token, Jetton, meme coin, TON blockchain" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: radial-gradient(circle at top, #0b2a4a, #050b14);
-            color: #ffffff;
-            text-align: center;
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./logo1.png" />
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+  <style>
+    :root {
+      --bg-dark: #050b14;
+      --bg-light: #0b2a4a;
+      --primary: #4fd1ff;
+      --secondary: #39ff9f;
+      --text: #e6f1ff;
+      --muted: #9bb3d1;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+    }
 
-        img.logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg-light), var(--bg-dark));
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        h2 {
-            color: #4fd1ff;
-            font-weight: normal;
-            margin-bottom: 30px;
-        }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #dbe9ff;
-        }
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
 
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 25px 0;
-        }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 0 40px rgba(79, 209, 255, 0.35);
+    }
 
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 22px;
-            border-radius: 30px;
-            background: #1da1f2;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
 
-        .links a:hover {
-            background: #0d8ddb;
-        }
+    header h2 {
+      font-weight: 400;
+      color: var(--primary);
+      margin-top: 10px;
+    }
 
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #9bb3d1;
-        }
-    </style>
+    header p {
+      max-width: 720px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      margin-top: 35px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 26px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #002;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(79, 209, 255, 0.4);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .card h4 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .token-info p {
+      margin: 6px 0;
+      font-size: 1.05rem;
+    }
+
+    .roadmap-step {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="./tonfrog-logo.png" alt="TONFROG Logo" class="logo" />
+  <!-- HERO -->
+  <header>
+    <img src="./logo1.png" alt="TONFROG Logo" />
+    <h1>TONFROG</h1>
+    <h2>TFROG · Meme Token on TON</h2>
+    <p>
+      TONFROG (TFROG) is a community-driven meme token built on
+      <strong>The Open Network (TON)</strong>, combining fun, transparency,
+      and Telegram-native crypto culture.
+    </p>
 
-        <h1>TONFROG</h1>
-        <h2>TFROG · Meme Token on TON</h2>
-
-        <div class="card">
-            <p>
-                <strong>TONFROG (TFRG)</strong> is a community-driven meme token built on
-                <strong>The Open Network (TON)</strong>.
-                Inspired by internet culture and powered by Telegram-native crypto,
-                TONFROG focuses on fun, transparency, and community growth.
-            </p>
-        </div>
-
-        <div class="card">
-            <p><strong>Token Information</strong></p>
-            <p>
-                🪙 Name: TONFROG<br />
-                🔤 Symbol: TFROG<br />
-                🔗 Network: TON<br />
-                📦 Standard: Jetton
-            </p>
-        </div>
-
-        <div class="links">
-            <a href="#" target="_blank">Telegram</a>
-            <a href="#" target="_blank">Explorer</a>
-            <a href="#" target="_blank">DEX</a>
-        </div>
-
-        <footer>
-            © 2026 TONFROG. Community project. No financial advice.
-        </footer>
+    <div class="buttons">
+      <a href="#" target="_blank">Telegram</a>
+      <a href="#" target="_blank">Explorer</a>
+      <a href="#" target="_blank">DEX</a>
     </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <h3>🐸 About TONFROG</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Community First</h4>
+        <p>
+          TONFROG is built for the community. No complex promises —
+          just transparency, engagement, and fun on TON.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Built on TON</h4>
+        <p>
+          Fast transactions, low fees, and deep Telegram integration
+          make TON the perfect home for TONFROG.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Meme with Utility</h4>
+        <p>
+          Beyond memes, TONFROG aims to unlock token-gated access,
+          rewards, and community tools.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKEN INFO -->
+  <section>
+    <h3>🪙 Token Information</h3>
+    <div class="card token-info">
+      <p><strong>Name:</strong> TONFROG</p>
+      <p><strong>Symbol:</strong> TFROG</p>
+      <p><strong>Network:</strong> The Open Network (TON)</p>
+      <p><strong>Standard:</strong> Jetton</p>
+      <p><strong>Total Supply:</strong> 1,000,000,000</p>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section>
+    <h3>📊 Tokenomics</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>40% – Liquidity</h4>
+        <p>Ensures healthy trading and long-term stability.</p>
+      </div>
+      <div class="card">
+        <h4>30% – Community</h4>
+        <p>Airdrops, rewards, and ecosystem growth.</p>
+      </div>
+      <div class="card">
+        <h4>15% – Development</h4>
+        <p>Future tools, bots, and infrastructure.</p>
+      </div>
+      <div class="card">
+        <h4>15% – Marketing</h4>
+        <p>Partnerships, visibility, and adoption.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <h3>🗺️ Roadmap</h3>
+    <div class="card">
+      <div class="roadmap-step"><strong>Phase 1:</strong> Token launch, website, liquidity</div>
+      <div class="roadmap-step"><strong>Phase 2:</strong> Community growth, airdrops, listings</div>
+      <div class="roadmap-step"><strong>Phase 3:</strong> Telegram bot, token utility</div>
+      <div class="roadmap-step"><strong>Phase 4:</strong> NFTs & ecosystem expansion</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 TONFROG (TFROG). Community project.<br />
+    This website does not provide financial advice.
+  </footer>
 
 </body>
 </html>
